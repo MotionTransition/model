@@ -197,8 +197,8 @@ class MotionTrainingPortal(BaseTrainingPortal):
         cond['past_motion'] = cond['past_motion'].permute(0, 2, 3, 1) # [bs, joint_num, joint_feat, past_frames]
         cond['traj_pose'] = cond['traj_pose'].permute(0, 2, 1) # [bs, 6, frame_num//2]
         cond['traj_trans'] = cond['traj_trans'].permute(0, 2, 1) # [bs, 2, frame_num//2]
-        cond['keyframe_start'] = cond['keyframe_start'].unsqueeze(dim = 3) # [bs, joint_num, 6, 1]
-        cond['keyframe_end'] = cond['keyframe_end'].unsqueeze(dim = 3) # [bs, joint_num, 6, 1]
+        cond['keyframe_start'] = cond['keyframe_start'].unsqueeze(dim = 3) # [bs, joint_num, joint_feat(6), 1]
+        cond['keyframe_end'] = cond['keyframe_end'].unsqueeze(dim = 3) # [bs, joint_num, joint_feat(6), 1]
 
         model_output = self.model.interface(x_t, self.diffusion._scale_timesteps(t), cond)
         
