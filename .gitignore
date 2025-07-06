@@ -44,11 +44,9 @@ Library/AssetStore*
 # Python
 nohup.out
 */nohup.out
-/PyTorch/data/*
-!/PyTorch/data/*.py
-/PyTorch/save/
-/save/
-/data/
+data/*
+!data/*.py
+save/*
 __pycache__/
 *.py[cod]
 *.pyo
