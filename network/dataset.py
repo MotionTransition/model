@@ -125,7 +125,7 @@ class MotionDataset(Dataset):
 
         start_frame, end_frame = past_motion[-1], future_motion[end_frame_idx, ...]
         # tta = np.arange(inbetween_size-1, -1, -1, dtype=np.float32) # size of inbetween_size
-        tta = np.arange(0, inbetween_size, 1, dtype=np.float32)
+        tta = np.arange(1, inbetween_size + 1, 1, dtype=np.float32)
         tta = np.flip(tta).copy()
         mask = np.zeros(45, dtype=np.float32)
         mask[0:tta.size] = tta

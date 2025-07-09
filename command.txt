@@ -1,0 +1,1 @@
+python train.py --name in_between_train1_T10_T20_T30_T40 --epoch 100 --batch_size 512 --diffusion_steps 4 --resume save/in_between_train1_T10_T20_T30_T40_100style/best.pt

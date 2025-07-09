@@ -116,7 +116,6 @@ class MotionDiffusion(nn.Module):
         end_motion = y['keyframe_end']
         inbetween_size = y['inbetween_size']
         tta = y['tta']
-        mask = y['mask']
         
         # CFG on past motion
         keep_batch_idx = torch.rand(bs, device=past_motion.device) < (1-self.cond_mask_prob)
